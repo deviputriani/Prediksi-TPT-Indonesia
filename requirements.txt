@@ -1,11 +1,10 @@
 streamlit==1.31.0
-pandas
-numpy
-scikit-learn
+numpy==1.26.4
+pandas==2.1.4
+scikit-learn==1.4.2
 matplotlib
 seaborn
 joblib
-
-shap==0.41.0
-numba==0.57.1
-llvmlite==0.40.1
+numba==0.58.1
+llvmlite==0.41.1
+shap==0.43.0
