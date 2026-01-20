@@ -8,6 +8,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import shap
 from sklearn.preprocessing import MinMaxScaler
+import os
 
 app = Flask(__name__)
 DATASET = "dataset.csv"
@@ -81,7 +82,7 @@ def index():
                 chart = base64.b64encode(buf.getvalue()).decode("utf-8")
                 plt.close(fig)
 
-            # SHAP using KernelExplainer (works for any model)
+            # SHAP using KernelExplainer
             try:
                 scaler = MinMaxScaler()
                 series_scaled = scaler.fit_transform(series.reshape(-1,1))
@@ -119,4 +120,5 @@ def index():
     )
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
