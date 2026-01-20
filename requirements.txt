@@ -4,3 +4,11 @@ numpy
 matplotlib
 tensorflow
 scikit-learn
+shap
+streamlit
+pandas
+numpy
+scikit-learn
+seaborn
+tensorflow
+keras
